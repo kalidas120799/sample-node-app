@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome EJS</title>
+</head>
+
+<body>
+    <!--  for display the data -->
+    <h1>hello <%= data.user %>
+    </h1>
+    <p> <%- include('./common', {date: data.date}); %>
+    </p>
+    <div>
+        <% if (data.role) { %>
+            <p>Welcome, admin!</p>
+            <% } else { %>
+                <p>Welcome, user!</p>
+                <% } %>
+    </div>
+    <ul>
+        <% for (let item of data.data) { %>
+            <li id=<%=item.id %>>
+                <%= item.id %> - <%= item.name %>
+            </li>
+            <% } %>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+doctype html
+head
+    title Welcome PUG
+body
+    h1 hello #{data.user}
+    p #{data.date}
+    div 
+        ul 
+            each item of data.data 
+                li 
+                    span #{item.id} - #{item.name}
+    div 
+        if data.role === 'admin'
+            p Welcome, admin!
+        else 
+            p Welcome, user!
